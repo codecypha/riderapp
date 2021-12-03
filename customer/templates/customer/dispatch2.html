@@ -1,0 +1,217 @@
+
+{% extends "base1/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <div class="page-content-wrapper">
+    <div class="page-content">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+
+                 <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="card-body row">
+                        <div class="col-lg-12">
+                            <h3>Where are you delivering to:</h3>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div
+                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                {% render_field form.pickup type="text" class="mdl-textfield__input" required="required" %} 
+                                <label class="mdl-textfield__label">Pickup Location</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div
+                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                {% render_field form.dropoff type="text" class="mdl-textfield__input" required="required" %} 
+                                <label class="mdl-textfield__label">Droppff Location</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div
+                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                {% render_field form.itemName type="text" class="mdl-textfield__input" required="required" %} 
+                                <label class="mdl-textfield__label">Item Name</label>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 p-t-20">
+                            <div
+                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                {% render_field form.quantity type="text" class="mdl-textfield__input" required="required" %} 
+                                <label class="mdl-textfield__label">Quantity</label>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 p-t-20">
+                            <div
+                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                {% render_field form.reciever_name type="text" class="mdl-textfield__input" required="required" %}
+                                <label class="mdl-textfield__label">Reciever Name</label>
+                            </div>
+                        </div>
+
+
+                      
+                        <div class="col-lg-6 p-t-20">
+                            <div
+                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                {% render_field form.recievers_phone type="text" class="mdl-textfield__input" required="required" %}
+                                <label class="mdl-textfield__label">Reciever Phone Number</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div
+                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                {% render_field form.note type="text" class="mdl-textfield__input"  %} 
+                                <label class="mdl-textfield__label">Delivery Note</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 p-t-20 text-center">
+                            <button type="submit"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Proceed</button>
+                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-primary" data-toggle="modal" data-target="#myModal" href="#myModal">Get Estimate</a>
+                        </div>
+
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    <div id="myModal" class="modal">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-3">
+                   
+                </div>
+                <div class="col-lg-6">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+                                    <div class="card-body row">
+                                        <div class="col-lg-12">
+                                            <h3>Where are you delivering to:</h3>
+                                        </div>
+                                        <div class="col-lg-6 p-t-20">
+                                            <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                                {% render_field form.pickup type="text" class="mdl-textfield__input" disabled="disabled" required="required"  %} 
+                                                <label class="mdl-textfield__label">Pickup Location</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 p-t-20">
+                                            <div
+                                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                                {% render_field form.dropoff type="text" class="mdl-textfield__input" disabled="disabled" required="required"  %} 
+                                                <label class="mdl-textfield__label">Pickup Location</label>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-lg-12 p-t-150 text-center">
+                                            <h3>N 1500<h6>Flat charge</h6></h3>
+                                        </div>
+               
+                                        <div class="col-lg-12 p-t-20 text-center">
+                                            <!-- <button type="button"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Proceed</button> -->
+                                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20  btn-pink"  href="#">Pay on Delivery</a>
+                                            <a button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10  m-r-20 btn-primary" onClick="makePayment2()">Card Payment </button> </a>
+                                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default" data-toggle="modal" data-target="#myModal" href="#myModal">Cancel</a>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                   
+                </div>
+            </div>
+</div>
+    </div>
+</form>
+
+</form>
+
+
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+    
+
+
+  <script>
+    function makePayment() {
+      FlutterwaveCheckout({
+        public_key: "FLWPUBK_TEST-c38a0754a4c1c2b2f9320288ad7fbf64-X",
+        tx_ref: "hooli-tx-1924bbtyt",
+        amount: 1,
+        currency: "NGN",
+        country: "NG",
+        payment_options: "card",
+        redirect_url: // specified redirect URL
+          "http://127.0.0.1:8000/customer/dispatch/",
+        meta: {
+          consumer_id: 23,
+          consumer_mac: "92a3-912ba-1192a",
+        },
+        customer: {
+          email: "user@gmail.com",
+          phone_number: "08102909304",
+          name: "yemi desola",
+        },
+        callback: function (data) {
+          console.log(data);
+        },
+        onclose: function() {
+          // close modal
+        },
+        customizations: {
+          title: "My store",
+          description: "Snappy delivery payment",
+          logo: "https://assets.piedpiper.com/logo.png",
+        },
+      });
+    }
+  </script>
+
+  
+  <script>
+    function makePayment2() {
+      FlutterwaveCheckout({
+        public_key: "FLWPUBK_TEST-c38a0754a4c1c2b2f9320288ad7fbf64-X",
+        tx_ref: "snappypay01",
+        amount: 1,
+        currency: "NGN",
+        country: "NG",
+        payment_options: "card,mobilemoney,ussd",
+        customer: {
+          email: "user@gmail.com",
+          phone_number: "08102909304",
+          name: "yemi desola",
+        },
+        callback: function (data) { // specified callback function
+          console.log(data);
+        },
+        customizations: {
+          title: "My store",
+          description: "Payment for items in cart",
+          logo: "https://assets.piedpiper.com/logo.png",
+        },
+      });
+    }
+  </script>
+
+
+{% endblock content %}
+

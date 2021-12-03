@@ -1,0 +1,212 @@
+{% load static %}
+
+<div class="sidebar-container">
+    {% include 'base/message.html' %}
+    <div class="sidemenu-container navbar-collapse collapse fixed-menu">
+        <div id="remove-scroll">
+            <ul class="sidemenu page-header-fixed p-t-20" data-keep-expanded="false" data-auto-scroll="true"
+                data-slide-speed="200">
+                <li class="sidebar-toggler-wrapper hide">
+                    <div class="sidebar-toggler">
+                        <span></span>
+                    </div>
+                </li>
+                <li class="sidebar-user-panel">
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="{% static  'assets/img/dp.jpg' %}" class="img-circle user-img-circle"
+                                alt="User Image" />
+                        </div>
+                        <div class="pull-left info">
+                            <p> Welcome {{ initiator|title}}</p>
+                            <a title="Inbox" href="email_inbox.html"><i class="material-icons">email</i></a>
+                            <a title="Profile" href="user_profile.html"><i
+                                    class="material-icons">person</i></a>
+                            <a title="Logout" href="{% url 'logout' %}"><i
+                                    class="material-icons">power_settings_new</i></a>
+                        </div>
+                    </div>
+                </li>
+        
+                <li class="nav-item active">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="material-icons">dashboard</i>
+                        <span class="title">Dashboard  </span>
+                        <span class="arrow open"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item active">
+                            <a href="index.html" class="nav-link ">
+                                <span class="title">Dashboard 1</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="dashboard2.html" class="nav-link ">
+                                <span class="title">Dashboard 2</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="material-icons">local_taxi</i>
+                        <span class="title">Trip</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="active_trips.html" class="nav-link ">
+                                <span class="title">Active Trips</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="completed_trips.html" class="nav-link ">
+                                <span class="title">Completed Trips</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="booked_trips.html" class="nav-link ">
+                                <span class="title">Booked Trips</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="route_map.html" class="nav-link ">
+                                <span class="title">Route Map</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="material-icons">person</i>
+                        <span class="title">Drivers</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="{% url 'add_driver' %}" class="nav-link ">
+                                <span class="title">Add New Driver</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'all_driver' %}" class="nav-link ">
+                                <span class="title">All Drivers</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'driver_payment' %}" class="nav-link ">
+                                <span class="title">Driver Payment</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="all_passenger.html" class="nav-link nav-toggle">
+                        <i class="material-icons">people</i>
+                        <span class="title">All Passengers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="material-icons">airport_shuttle</i>
+                        <span class="title">Vehicle</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="add_vehicle.html" class="nav-link ">
+                                <span class="title">Add Vehicle Details</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="all_vehicles.html" class="nav-link ">
+                                <span class="title">View All Vehicle</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="edit_vehicle.html" class="nav-link ">
+                                <span class="title">Edit Vehicle Details</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="material-icons">style</i>
+                        <span class="title">Coupons</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="coupon_generation.html" class="nav-link ">
+                                <span class="title">Coupon Generation</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="coupon_list.html" class="nav-link ">
+                                <span class="title">Coupon List</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-toggle">
+                        <i class="material-icons">local_atm</i>
+                        <span class="title">Fare Management</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="add_fare.html" class="nav-link ">
+                                <span class="title">Add Fare</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="fair_list.html" class="nav-link ">
+                                <span class="title">Fail List</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-toggle"> <i class="material-icons">grain</i>
+                        <span class="title">Apps</span> <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="chat.html" class="nav-link "> <span class="title">Chat</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact_list.html" class="nav-link "> <span class="title">Contact
+                                    List</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact_grid.html" class="nav-link "> <span class="title">Contact
+                                    Grid</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="gallery.html" class="nav-link "> <span class="title">Gallery</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="support.html" class="nav-link "> <span class="title">Support</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="calendar.html" class="nav-link "> <span class="title">Calendar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
